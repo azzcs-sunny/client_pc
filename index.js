@@ -8,7 +8,9 @@ $('.englishBtn').css('color', 'rgb(34, 126, 36)');
 onBrandTopListSelect(1);
 onBrandTopImageSelect(1);
 
-
+/**
+ * home_right： 界面缩小后导航栏上的菜单栏按钮
+ */
 // 界面缩小后点击谈框式菜单显示
 $('.home_right').on('click', function() {
     $('.min_list_bg').show();
@@ -42,7 +44,10 @@ $('.aboutBtn').on('click', function() {
     $('.min_list_bg').hide();
 });
 
-
+/**
+ * all_brand_class ：   ALL BRAND模块
+ * double_phoenix_class ： DOUBLE PHOENIX 模块
+ */
 
 /// 2级导航栏
 $('.allBtn').on('click', function() {
@@ -147,7 +152,10 @@ $('.image_line_1').on('click', function() {
     $('.scroll_tanchuang_image').show();
 })
 
-
+/**
+ * scroll_tanchuang_image： 轮播图类型弹窗
+ * scroll_tanchuang：带有视频类的弹窗， 如果不需要视频将class: tanchuang_video_view隐藏便可
+ */
 // =========== 图片列表弹窗 ===========
 $('.scroll_tanchuang_image').on('click', function() {
     $('.scroll_tanchuang_image').hide();
@@ -174,8 +182,6 @@ $('.tanchuang_scroll_image_next').on('click', function() {
     }
     document.getElementById('scroll_image_current').innerHTML = `${currentScrollImagePage} / 5`;
 })
-
-
 
 // =========== 弹窗 ===========
 $('.scroll_tanchuang').on('click', function() {
