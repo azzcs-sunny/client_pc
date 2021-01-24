@@ -103,14 +103,21 @@ body {
 }
 
 /* 缩小后头部按钮列表 */
-.min_list {
+.min_list_bg {
     position: absolute;
     display: none;
     flex-direction: column;
-    left: 0;top: 80px;
-    height: 360px;width: 100%;
-    background-color: white;
+    left: 0;
+    top: 80px;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.1);
     z-index: 9;
+}
+
+.min_list {
+    background-color: white;
+    height: 360px;
 }
 
 /* 缩小后的导航栏菜单 */
@@ -287,14 +294,16 @@ body {
     height: 300px;
     background-color: white;
     position: relative;
-    min-width: 250px;
+    min-width: 300px;
 }
 
 .home_view_bg_left_image {
+    margin-right: 5px;
     background: url(images/1.jpg) no-repeat center center / 100% auto;
 }
 
 .home_view_bg_right_image {
+    margin-left: 5px;
     background: url(images/2.jpg) no-repeat center center / 100% auto;
 }
 
@@ -304,6 +313,9 @@ body {
 
 .home_top_left_view_2_image {
     background: url(images/2.jpg) no-repeat center center / 100% auto;
+}
+
+.home_top_left_view_image_mr {
 }
 
 .home_top_left_view_3_image {
@@ -334,6 +346,7 @@ body {
     width: 105px; 
     height: 30px;
     line-height: 30px;
+    font-size: 16px;
     background-color: greenyellow;
     color: white;
     margin-right: 20px;
@@ -397,6 +410,7 @@ body {
 
 .brand_top_btn {
     height: 80px;
+    text-align: center;
     line-height: 80px;
     padding: 0px 20px;
     font-size : 16px;
@@ -554,7 +568,6 @@ body {
 .all_brand__bottom_3_content_view {
     margin-top: 30px;
     margin-bottom: 30px;
-    background-color: red;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -565,7 +578,8 @@ body {
     background: url(images/1.jpg) no-repeat center center / 100% auto;
     flex: 1;
     height: 300px; 
-    min-width: 300px;
+    min-width: 290px;
+    /* margin-right: 10px; */
     position: relative;
 }
 
@@ -573,7 +587,8 @@ body {
     background: url(images/2.jpg) no-repeat center center / 100% auto;
     flex: 1;
     height: 300px; 
-    min-width: 300px;
+    min-width: 290px;
+    margin-right: 10px;
     position: relative;
 }
 
@@ -818,7 +833,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    overflow-y: auto;
+    overflow-y: visible;
     position: relative;
 }
 
@@ -854,8 +869,9 @@ body {
     color: rgb(122, 121, 122);
     font-size: 16px;
     word-wrap: break-word;
-    max-height: 250px;
+    max-height: 240px;
     overflow-y: auto;
+    margin-bottom: 80px;
 }
 
 .tanchuang_close_button {
@@ -1056,12 +1072,35 @@ body {
     .brand_video {
         width: 100%;
     }
+    .tanchuang_bg {
+        overflow-y: auto;
+    }
+    .list_item_right_bg_title {
+        font-size : 16px;
+    }
+    
+    .list_item_right_bg_dec {
+        font-size : 12px;
+    }
 }
 
 @media (max-width: 661px) {
     .brand_top_btn {
         padding: 0px 10px;
         font-size : 10px;
+    }
+}
+
+@media (max-width: 596px) {
+    .home_view_bg_left_image {
+        margin-right: 0px;
+    }
+    .home_view_bg_right_image { 
+        margin-left: 0px;
+    }
+    .home_top_left_view_image_mr {
+        padding-right: 0px;
+        min-width: 300px;
     }
 }
 
@@ -1104,11 +1143,41 @@ body {
     .brand_video {
         width: 200px;
     }
+    .tanchuang_bg {
+        overflow-y: visible;
+    }
+    .list_item_right_bg_title {
+        font-size : 20px;
+    }
+    
+    .list_item_right_bg_dec {
+        font-size : 16px;
+    }
+    .all_brand_image_bottom_3_item_1 {
+        margin-right: 10px;
+    }
+    
+    .all_brand_image_bottom_3_item_2 {
+        margin-right: 10px;
+    }
 }
 
 @media (min-width: 661px) {
     .brand_top_btn {
         padding: 0px 20px;
         font-size : 16px;
+    }
+}
+
+@media (min-width: 596px) {
+    .home_view_bg_left_image {
+        margin-right: 5px;
+    }
+    .home_view_bg_right_image { 
+        margin-left: 5px;
+    }
+    .home_top_left_view_image_mr {
+        margin-right: 10px;
+        min-width: 290px;
     }
 }

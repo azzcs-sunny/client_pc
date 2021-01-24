@@ -3,39 +3,48 @@ var currentScrollImagePage = 1;
 
 ///默认选择的按钮
 $('.englishBtn').css('color', 'rgb(34, 126, 36)');
-onNavListSelet(1);
+// onNavListSelet(1);
+// onBrandBottomImageSelect(1);
 onBrandTopListSelect(1);
 onBrandTopImageSelect(1);
-onBrandBottomImageSelect(1);
 
 
 // 界面缩小后点击谈框式菜单显示
 $('.home_right').on('click', function() {
-    $('.min_list').show();
+    $('.min_list_bg').show();
+});
+
+$('.min_list_bg').on('click', function() {
+    $('.min_list_bg').hide();
 });
 
 $('.homeBtn').on('click', function() {
     onNavListSelet(1);
     $('.brand_class').hide();
     $('.home_class').show();
-    $('.min_list').hide();
+    $('.min_list_bg').hide();
+    window.history.back(-1);
 });
 
 $('.brandBtn').on('click', function() {
     onNavListSelet(2);
     $('.home_class').hide();
     $('.brand_class').show();
-    $('.min_list').hide();
+    $('.min_list_bg').hide();
+    window.location.href="brand.html";
 });
 
 $('.newsBtn').on('click', function() {
-    $('.min_list').hide();
+    $('.min_list_bg').hide();
 });
 
 $('.aboutBtn').on('click', function() {
-    $('.min_list').hide();
+    $('.min_list_bg').hide();
 });
 
+
+
+/// 2级导航栏
 $('.allBtn').on('click', function() {
     onBrandTopListSelect(1);
     $('.double_phoenix_class').hide();
@@ -44,6 +53,30 @@ $('.allBtn').on('click', function() {
 
 $('.doubleBtn').on('click', function() {
     onBrandTopListSelect(2);
+    $('.all_brand_class').hide();
+    $('.double_phoenix_class').show();
+});
+
+$('.patraBtn').on('click', function() {
+    onBrandTopListSelect(3);
+    $('.all_brand_class').hide();
+    $('.double_phoenix_class').show();
+});
+
+$('.emeBtn').on('click', function() {
+    onBrandTopListSelect(4);
+    $('.all_brand_class').hide();
+    $('.double_phoenix_class').show();
+});
+
+$('.konnersBtn').on('click', function() {
+    onBrandTopListSelect(5);
+    $('.all_brand_class').hide();
+    $('.double_phoenix_class').show();
+});
+
+$('.plakBtn').on('click', function() {
+    onBrandTopListSelect(6);
     $('.all_brand_class').hide();
     $('.double_phoenix_class').show();
 });
@@ -155,12 +188,29 @@ $('.close_btn').on('click', function() {
     $('.scroll_tanchuang').hide();
 })
 
+
+// 点击大图
+$('.tanchuang_max_image').on('click', function() {
+    currentScrollImagePage = 1;
+    $('.scroll_tanchuang_image').show();
+})
+
+
+
 // 不做响应事件
 $('.tanchuang_bg').on('click', function(e) {
     e.stopPropagation();
 })
 
 $('.scroll_bg').on('click', function(e) {
+    e.stopPropagation();
+})
+
+$('.min_input').on('click', function(e) {
+    e.stopPropagation();
+})
+
+$('.min_eng').on('click', function(e) {
     e.stopPropagation();
 })
 
@@ -220,29 +270,29 @@ function onBrandTopListSelect(index) {
 }
 
 function onBrandTopImageSelect(index) {
-    $('.all_brand_image_1').css('border', index == 1 ?'2px solid red' : '');
-    $('.all_brand_image_2').css('border', index == 2 ?'2px solid red' : '');
-    $('.all_brand_image_3').css('border', index == 3 ?'2px solid red' : '');
-    $('.all_brand_image_4').css('border', index == 4 ?'2px solid red' : '');
-    $('.all_brand_image_5').css('border', index == 5 ?'2px solid red' : '');
+    // $('.all_brand_image_1').css('border', index == 1 ?'2px solid red' : '');
+    // $('.all_brand_image_2').css('border', index == 2 ?'2px solid red' : '');
+    // $('.all_brand_image_3').css('border', index == 3 ?'2px solid red' : '');
+    // $('.all_brand_image_4').css('border', index == 4 ?'2px solid red' : '');
+    // $('.all_brand_image_5').css('border', index == 5 ?'2px solid red' : '');
     $('.all_brand_class_bg_image_view').css('background', `url(images/${index}.jpg) no-repeat center center / 100% auto`);
 }
 
 function onBrandBottomImageSelect(index) {
-    $('.all_brand_bottom_image_1').css('border', index == 1 ?'2px solid red' : '');
-    $('.all_brand_bottom_image_2').css('border', index == 2 ?'2px solid red' : '');
-    $('.all_brand_bottom_image_3').css('border', index == 3 ?'2px solid red' : '');
-    $('.all_brand_bottom_image_4').css('border', index == 4 ?'2px solid red' : '');
-    $('.all_brand_bottom_image_5').css('border', index == 5 ?'2px solid red' : '');
+    // $('.all_brand_bottom_image_1').css('border', index == 1 ?'2px solid red' : '');
+    // $('.all_brand_bottom_image_2').css('border', index == 2 ?'2px solid red' : '');
+    // $('.all_brand_bottom_image_3').css('border', index == 3 ?'2px solid red' : '');
+    // $('.all_brand_bottom_image_4').css('border', index == 4 ?'2px solid red' : '');
+    // $('.all_brand_bottom_image_5').css('border', index == 5 ?'2px solid red' : '');
     $('.all_brand_class_bg_bottom_image_view').css('background', `url(images/${index}.jpg) no-repeat center center / 100% auto`);
     
 }
 
 function onTanchuangImageSelect(index) {
-    $('.tanchuang_image_1').css('border', index == 1 ?'2px solid red' : '');
-    $('.tanchuang_image_2').css('border', index == 2 ?'2px solid red' : '');
-    $('.tanchuang_image_3').css('border', index == 3 ?'2px solid red' : '');
-    $('.tanchuang_image_4').css('border', index == 4 ?'2px solid red' : '');
-    $('.all_brand_image_5').css('border', index == 5 ?'2px solid red' : '');
+    // $('.tanchuang_image_1').css('border', index == 1 ?'2px solid red' : '');
+    // $('.tanchuang_image_2').css('border', index == 2 ?'2px solid red' : '');
+    // $('.tanchuang_image_3').css('border', index == 3 ?'2px solid red' : '');
+    // $('.tanchuang_image_4').css('border', index == 4 ?'2px solid red' : '');
+    // $('.all_brand_image_5').css('border', index == 5 ?'2px solid red' : '');
     $('.tanchuang_max_image').css('background', `url(images/${index}.jpg) no-repeat center center / 100% auto`);
 }
